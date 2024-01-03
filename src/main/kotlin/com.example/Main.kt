@@ -1,3 +1,4 @@
+@OptIn(ExperimentalStdlibApi::class)
 fun main(args: Array<String>) {
     // One-line comment
 
@@ -111,7 +112,104 @@ fun main(args: Array<String>) {
     * */
 
     // * For
-    // TODO: Here (implement for example code)
+    val startRange: Int = 1
+    val endRange: Int = 10
+    val cakes: List<String> = listOf("carrot", "cheese", "chocolate")
+    val weapons: Set<String> = setOf("AK-47", "M4A1", "RPG")
+    val products: Map<String, String> = mapOf(
+        "Tablet" to "Table (Price: $500)",
+        "Laptop" to "Laptop (Price: $1200)"
+    );
+
+    // From startRange to endRage (1,2,3,..,10)
+    for (index in startRange..endRange) {
+        println(index)
+    }
+
+    // From startRange to endRange (1,2,3,..,10) (#Method-2)
+    for (index in startRange.rangeTo(endRange)) {
+        println(index)
+    }
+
+    // From startRange to until endRange (1,2,3,..,9)
+    for (index in startRange..<endRange) {
+        println(index)
+    }
+
+    // From startRange to until endRange (1,2,3,..,9) (#Method-2)
+    for (index in startRange until endRange) {
+        println(index)
+    }
+
+    // From startRange to endRange with Step (1,4,7,10)
+    for (index in startRange..endRange step 3) {
+        println(index)
+    }
+
+    // From startRange to until endRange with Step (1,4,7)
+    for (index in startRange..<endRange step 3) {
+        println(index)
+    }
+
+    // From endRange to startRange (10,9,8,..,1)
+    for (index in endRange downTo startRange) {
+        println(index)
+    }
+
+    // From endRange to startRange (10,9,8,..,1) (#Method-2)
+    for (index in endRange.downTo(startRange)) {
+        println(index)
+    }
+
+    // From endRange to until startRange (10,9,8,..,2)
+    for (index in endRange downTo startRange + 1) {
+        println(index)
+    }
+
+    // From endRange to startRange with Step (10,7,4,1)
+    for (index in endRange downTo startRange step 3) {
+        println(index)
+    }
+
+    // From endRange to until startRange with Step (10,7,4)
+    for (index in endRange downTo startRange + 1 step 3) {
+        println(index)
+    }
+
+    // Hybrid start to end with step 3
+    for (index in startRange.rangeTo(endRange).step(3)) {
+        println(index)
+    }
+
+    // Hybrid end to start with step 2
+    for (index in endRange.downTo(startRange).step(2)) {
+        println(index)
+    }
+
+    // Iterate From list with Value
+    for (cakeName in cakes) {
+        println(cakeName)
+    }
+
+    // Iterate From list with Index & Value
+    for ((index, cakeName) in cakes.withIndex()) {
+        println("$index : $cakeName")
+    }
+
+    // * Iterate From set with Value
+    for (weaponName in weapons) {
+        println(weaponName)
+    }
+
+    // * Iterate From set with Index & Value
+    for ((weaponIndex, weaponName) in weapons.withIndex()) {
+        println("$weaponIndex $weaponName")
+    }
+
+    // Iterate From map with index & value
+    for ((productId, productSummary) in products) {
+        println("$productId --> $productSummary")
+    }
 
     // * While
     // TODO: Here (implement for example code)
