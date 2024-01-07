@@ -192,3 +192,19 @@ public class MyTest {
     }
 }
 
+// * Note that you can use the override keyword as part of the property declaration in a primary constructor:
+open class Parent(open val statusCode: Int) {
+    open val message: String = "Test";
+}
+
+class Child(
+    override val message: String,
+    override val statusCode: Int,
+) : Parent(statusCode) {
+    val stack: String = "Default";
+}
+
+fun main() {
+    val p = Parent(statusCode = 200)
+    Child(message = "Hello", statusCode = 201)
+}
