@@ -7,7 +7,7 @@ package org.example.common
 * Additional attributes of the annotation can be specified by annotating the annotation class with meta-annotations
 * * @Target specifies the possible kinds of elements which can be annotated with the annotation (such as classes, functions, properties, and expressions);
 *
-* * @Retention specifies whether the annotation is stored in the compiled class files and whether it's visible through reflection at runtime (by default, both are true);
+* * @Retention specifies whethers the annotation is stored in the compiled class files and whether it's visible through reflection at runtime (by default, both are true);
 *
 * * @Repeatable allows using the same annotation on a single element multiple times;
 *
@@ -23,6 +23,6 @@ annotation class BindRoute(val path: String) {}
 class SimpleHttpController {
     @BindRoute("/signin/")
     fun signIn(@BindRoute("/test") request: Any) {
-        println("on-signin route called")
+        print("on-signin route called")
     }
 }
